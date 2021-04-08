@@ -1,27 +1,24 @@
 Ansible role for shfmt
 ==================================
 
-Installed shfmt
+Installs shfmt
 
 [![GitHub Actions](https://github.com/mongodb-ansible-roles/ansible-role-shfmt/workflows/Molecule%20Test/badge.svg)](https://github.com/mongodb-ansible-roles/ansible-role-shfmt/actions?query=workflow%3A%22Molecule+Test%22)
 [![GitHub Actions](https://github.com/mongodb-ansible-roles/ansible-role-shfmt/workflows/Release/badge.svg)](https://github.com/mongodb-ansible-roles/ansible-role-shfmt/actions?query=workflow%3A%22Release%22)
 
-Requirements
-------------
-
-None
 
 Role Variables
 --------------
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:--------:|
-| name | desc | type | default | required |
+| `shfmt_root_directory` | Where to install shfmt | string | `/opt/shfmt` | `false` |
+| `shfmt_version` | Version of shfmt to install | string | `v3.2.4` | `false` |
 
-Dependencies
-------------
+Install Directory
+-----------------
 
-None
+By default, `shfmt` will be installed in `/opt/shfmt/$version/bin/shfmt`
 
 Example Playbook
 ----------------
@@ -30,6 +27,8 @@ Example Playbook
 - hosts: all
   roles:
     - role: ansible-role-shfmt
+      vars:
+        shfmt_version: v3.2.4
 ```
 
 License

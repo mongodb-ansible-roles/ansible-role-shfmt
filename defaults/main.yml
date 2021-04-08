@@ -1,1 +1,3 @@
 ---
+shfmt_root_directory: /opt/shfmt
+shfmt_version: v3.2.4
