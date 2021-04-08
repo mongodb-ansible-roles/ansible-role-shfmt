@@ -1,1 +1,18 @@
 ---
+- name: Make sure shfmt directory exists
+  become: true
+  file:
+    path: "{{ shfmt_root_directory }}/{{ shfmt_version }}/bin/"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Download shfmt
+  become: true
+  get_url:
+    url: https://github.com/mvdan/sh/releases/download/{{ shfmt_version }}/shfmt_{{ shfmt_version }}_linux_amd64
+    dest: "{{ shfmt_root_directory }}/{{ shfmt_version }}/bin/shfmt"
+    owner: root
+    group: root
+    mode: 0755
