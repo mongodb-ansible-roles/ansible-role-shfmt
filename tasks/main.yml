@@ -11,7 +11,7 @@
 - name: Download shfmt
   become: true
   get_url:
-    url: https://github.com/mvdan/sh/releases/download/{{ shfmt_version }}/shfmt_{{ shfmt_version }}_linux_arm64
+    url: https://github.com/mvdan/sh/releases/download/{{ shfmt_version }}/shfmt_{{ shfmt_version }}_linux_amd64
     dest: "{{ shfmt_root_directory }}/{{ shfmt_version }}/bin/shfmt"
     owner: root
     group: root
